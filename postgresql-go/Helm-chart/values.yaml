@@ -5,15 +5,19 @@
 replicaCount: 1
 
 image:
-  repository: postgresql-go
+  repository: postgresql-go-rc
   pullPolicy: Never
   tag: "latest"
 env:
   DBPORT: 5432
   DBHOST: "postgresql.postgresql.svc.cluster.local"
-  DBUSER: "postgres"
-  DBPASS: "JfJAX2pKkt"
-  DBNAME: "postgres"
+  DBNAME: "postgres" 
+
+####Encode DB credentials and put here.   
+secrets:
+  DBPASS: "SmZKQVgycEtrdA=="
+  DBUSER: "cG9zdGdyZXM="
+  
 
 imagePullSecrets: []
 nameOverride: ""
